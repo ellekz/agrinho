@@ -87,7 +87,7 @@ footer {
   background-color: var(--tulipe-leafs);
   color: var(--white);
   text-align: center;
-  padding: 15px 10px;
+  padding: 4px 0px;
   font-size: 0.9rem;
   box-shadow: 0 -3px 5px rgba(0,0,0,0.1);
   position: fixed;
@@ -292,3 +292,4 @@ footer {
   font-size: 1.1rem;
   line-height: 1.6;
 }
+
