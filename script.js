@@ -4,6 +4,7 @@ document.querySelectorAll('.fato-card').forEach(card => {
   });
 });
 
+
 const botoesTimeline = document.querySelectorAll('.timeline-bot');
 const conteudoTimeline = document.getElementById('conteudoTimeline');
 
@@ -15,16 +16,31 @@ const conteudos = {
 
 botoesTimeline.forEach(botao => {
   botao.addEventListener('click', () => {
-    // remover 'active' de todos os botões
+  
     botoesTimeline.forEach(btn => btn.classList.remove('active'));
 
-    // adicionar 'active' só no botão clicado
     botao.classList.add('active');
 
-    // pegar o período do botão clicado
     const periodo = botao.getAttribute('data-period');
 
-    // atualizar o conteúdo
     conteudoTimeline.textContent = conteudos[periodo];
   });
 });
+
+
+const botaoOpiniao = document.getElementById('enviarOpiniao');
+const campoOpiniao = document.getElementById('opiniaoUsuario');
+const respostas = document.getElementById('respostasOpiniao');
+
+botaoOpiniao.addEventListener('click', () => {
+  const texto = campoOpiniao.value.trim();
+
+  if (texto !== '') {
+    const novaResposta = document.createElement('p');
+    novaResposta.textContent = texto;
+    respostas.appendChild(novaResposta);
+    campoOpiniao.value = '';
+  }
+});
+
+
